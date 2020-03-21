@@ -55,6 +55,9 @@ def server(port):
         if(record != "NONE"):
             print("[S]: Data sent to client ::  ",record)
             csockid.send(record.encode('utf-8'))
+        else:
+            print("testing a send")
+            #csockid.send(record.encode('utf-8'))
 
 
     # close server socket

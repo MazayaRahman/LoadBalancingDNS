@@ -56,8 +56,7 @@ def server(port):
             print("[S]: Data sent to client ::  ",record)
             csockid.send(record.encode('utf-8'))
         else:
-            print("testing a send")
-            #csockid.send(record.encode('utf-8'))
+            print("Hostname not found! No data sent.")
 
 
     # close server socket

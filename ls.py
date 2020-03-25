@@ -98,6 +98,13 @@ def server(lsPort, ts1Host, ts1Port, ts2Host, ts2Port):
             data, addr = sock.recvfrom(200)
             print "received message:", data
             print("succesfully connected")
+            index = socks.index(sock)
+            print "Sent from server " , index
+            server = "TS1" # initialize which server sends info
+            if (index == 0):
+                server = "TS1"
+            else:
+                server = "TS2"
 
 
         if data is None:
@@ -106,6 +113,7 @@ def server(lsPort, ts1Host, ts1Port, ts2Host, ts2Port):
             print("[S]: Data sent to client ::  ",data)
             csockid.send(data.encode('utf-8'))
         else:
+            data = data + " " + server
             print("[S]: Data sent to client ::  ",data)
             csockid.send(data.encode('utf-8'))
 

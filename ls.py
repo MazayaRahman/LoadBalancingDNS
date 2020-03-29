@@ -113,7 +113,6 @@ def server(lsPort, ts1Host, ts1Port, ts2Host, ts2Port):
             print("[S]: Data sent to client ::  ",data)
             csockid.send(data.encode('utf-8'))
         else:
-            data = data + " " + server
             print("[S]: Data sent to client ::  ",data)
             csockid.send(data.encode('utf-8'))
 
